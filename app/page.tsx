@@ -1,5 +1,5 @@
 "use client"
-import { Box, Typography, Button, useTheme } from '@mui/material';
+import { Box, Typography, Button, useTheme, Container } from '@mui/material';
 import { useAuth } from './context/AuthContext';
 import Image from 'next/image';
 
@@ -8,15 +8,24 @@ export default function Home() {
   const theme = useTheme();
   const { token } = useAuth();
   return (
+    <Container maxWidth="md" sx={{
+      minHeight: { xs: '100vh', sm: 'auto' },
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      px: { xs: 0, sm: 0 },
+    }}>
     <Box
       sx={{
-        minHeight: '100vh',
+        width: '100%',
+        minHeight: { xs: '90vh', sm: '100vh' },
         bgcolor: theme.palette.background.default,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'flex-start',
-        pt: { xs: 3, sm: 6 },
+        justifyContent: { xs: 'center', sm: 'flex-start' },
+        pt: { xs: 0, sm: 6 },
+        pb: { xs: 4, sm: 0 },
         px: { xs: 2, sm: 0 },
       }}
     >
@@ -24,10 +33,10 @@ export default function Home() {
         variant="h2"
         sx={{
           fontWeight: 700,
-          mb: { xs: 1.5, sm: 2 },
+          mb: { xs: 2, sm: 2 },
           color: theme.palette.primary.main,
           textShadow: 'none',
-          fontSize: { xs: '2.4rem', sm: '2.8rem', md: '3.2rem' },
+          fontSize: { xs: '2.2rem', sm: '2.8rem', md: '3.2rem' },
           textAlign: 'center',
         }}
       >
@@ -36,7 +45,7 @@ export default function Home() {
       <Typography
         variant="body1"
         sx={{
-          fontSize: { xs: '1.15rem', sm: '1.25rem' },
+          fontSize: { xs: '1.1rem', sm: '1.25rem' },
           color: theme.palette.text.secondary,
           mb: { xs: 2.5, sm: 4 },
           textAlign: 'center',
@@ -49,8 +58,8 @@ export default function Home() {
       <Box
         sx={{
           width: '100%',
-          maxWidth: { xs: 360, sm: 520 },
-          mb: { xs: 2.5, sm: 4 },
+          maxWidth: { xs: 320, sm: 520 },
+          mb: { xs: 3, sm: 4 },
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -74,9 +83,9 @@ export default function Home() {
         variant="contained"
         color="primary"
         sx={{
-          mb: { xs: 3, sm: 5 },
+          mb: { xs: 0, sm: 5 },
           fontWeight: 600,
-          fontSize: { xs: '1.15rem', sm: '1.2rem' },
+          fontSize: { xs: '1.1rem', sm: '1.2rem' },
           borderRadius: 2,
           px: { xs: 3, sm: 4 },
           py: { xs: 1.2, sm: 1.4 },
@@ -88,5 +97,6 @@ export default function Home() {
         Ir para Timeline
       </Button>
     </Box>
+    </Container>
   );
 }
