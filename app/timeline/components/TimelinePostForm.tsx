@@ -18,7 +18,7 @@ interface TimelinePostFormProps {
 
 export function TimelinePostForm({ title, setTitle, content, setContent, handlePost, loading }: TimelinePostFormProps) {
   return (
-    <Box sx={{ width: "100%", maxWidth: 900, px: 4 }}>
+    <Box sx={{ width: "100%", maxWidth: 900, px: 4, mt: -2 }}>
       <Card sx={{ borderRadius: 3, mb: 3, boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}>
         <CardContent>
           <Box display="flex" flexDirection={{ xs: "column", md: "row" }} alignItems="center" gap={2}>
