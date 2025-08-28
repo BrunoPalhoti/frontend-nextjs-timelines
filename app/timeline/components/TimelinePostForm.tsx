@@ -3,6 +3,9 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import InputAdornment from "@mui/material/InputAdornment";
+import TitleIcon from "@mui/icons-material/Title";
+import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
 
 interface TimelinePostFormProps {
   title: string;
@@ -26,7 +29,23 @@ export function TimelinePostForm({ title, setTitle, content, setContent, handleP
               value={title}
               onChange={e => setTitle(e.target.value)}
               inputProps={{ maxLength: 60 }}
-              sx={{ borderRadius: 2, mb: { xs: 2, md: 0 } }}
+              sx={{
+                borderRadius: 2,
+                mb: { xs: 2, md: 0 },
+                background: "#f6fff9",
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": { borderColor: "#00D084" },
+                  "&:hover fieldset": { borderColor: "#02b87c" },
+                  "&.Mui-focused fieldset": { borderColor: "#00D084", boxShadow: "0 0 0 2px #00D08433" },
+                },
+              }}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <TitleIcon sx={{ color: "#00D084" }} />
+                  </InputAdornment>
+                ),
+              }}
             />
             <TextField
               label="O que você está pensando?"
@@ -35,7 +54,22 @@ export function TimelinePostForm({ title, setTitle, content, setContent, handleP
               value={content}
               onChange={e => setContent(e.target.value)}
               inputProps={{ maxLength: 180 }}
-              sx={{ borderRadius: 2 }}
+              sx={{
+                borderRadius: 2,
+                background: "#f6fff9",
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": { borderColor: "#00D084" },
+                  "&:hover fieldset": { borderColor: "#02b87c" },
+                  "&.Mui-focused fieldset": { borderColor: "#00D084", boxShadow: "0 0 0 2px #00D08433" },
+                },
+              }}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <EmojiObjectsIcon sx={{ color: "#00D084" }} />
+                  </InputAdornment>
+                ),
+              }}
             />
             <Button
               variant="contained"
