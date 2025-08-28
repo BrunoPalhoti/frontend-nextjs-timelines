@@ -16,16 +16,19 @@ export default function Home() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        pt: 6,
+        pt: { xs: 3, sm: 6 },
+        px: { xs: 2, sm: 0 },
       }}
     >
       <Typography
         variant="h2"
         sx={{
           fontWeight: 700,
-          mb: 2,
+          mb: { xs: 1.5, sm: 2 },
           color: theme.palette.primary.main,
           textShadow: 'none',
+          fontSize: { xs: '2.4rem', sm: '2.8rem', md: '3.2rem' },
+          textAlign: 'center',
         }}
       >
         Bem-vindo à Timeline!
@@ -33,11 +36,11 @@ export default function Home() {
       <Typography
         variant="body1"
         sx={{
-          fontSize: '1.2rem',
+          fontSize: { xs: '1.15rem', sm: '1.25rem' },
           color: theme.palette.text.secondary,
-          mb: 4,
+          mb: { xs: 2.5, sm: 4 },
           textAlign: 'center',
-          maxWidth: 480,
+          maxWidth: 520,
           fontWeight: 600,
         }}
       >
@@ -46,8 +49,8 @@ export default function Home() {
       <Box
         sx={{
           width: '100%',
-          maxWidth: 480,
-          mb: 4,
+          maxWidth: { xs: 360, sm: 520 },
+          mb: { xs: 2.5, sm: 4 },
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -56,20 +59,30 @@ export default function Home() {
         <Image
           src="/time 1.png"
           alt="Time 1 interagindo na timeline"
-          width={480}
-          height={320}
+          width={520}
+          height={340}
           style={{
             width: '100%',
-            borderRadius: 24,
+            borderRadius: 22,
             boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
             objectFit: 'cover',
+            border: '2px solid #e0e0e0',
           }}
         />
       </Box>
       <Button
         variant="contained"
         color="primary"
-        sx={{ mb: 5, fontWeight: 600, fontSize: '1.1rem', borderRadius: 2, px: 3, py: 1, color: '#fff' }}
+        sx={{
+          mb: { xs: 3, sm: 5 },
+          fontWeight: 600,
+          fontSize: { xs: '1.15rem', sm: '1.2rem' },
+          borderRadius: 2,
+          px: { xs: 3, sm: 4 },
+          py: { xs: 1.2, sm: 1.4 },
+          color: '#fff',
+          boxShadow: { xs: '0 2px 8px rgba(0,0,0,0.10)', sm: '0 4px 24px rgba(0,0,0,0.10)' },
+        }}
         onClick={() => window.location.href = token ? '/timeline' : '/login'}
       >
         Ir para Timeline
