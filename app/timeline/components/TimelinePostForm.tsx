@@ -81,6 +81,7 @@ export function TimelinePostForm({ title, setTitle, content, setContent, handleP
                 fontSize: "1rem",
                 borderRadius: 3,
                 background: "linear-gradient(135deg, #00D084, #02b87c)",
+                color: 'white',
               }}
               disabled={loading}
             >
